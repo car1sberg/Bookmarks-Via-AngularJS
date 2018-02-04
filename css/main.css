@@ -1,0 +1,456 @@
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+   md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
+    height: 50px;
+    min-height: 30px;
+    }
+
+    md-list-item.activeCategory.active {
+        background-color: darkgrey;
+    }
+
+    .subheader {
+        color: slategrey;
+        background-color: inherit;
+    }
+
+    .close:hover {
+        color: red;
+    }
+
+    .close:focus, .close:hover {
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: 1;
+        outline: 0 none;
+    }
+    
+    .close {
+        float: right;
+        font-size: 21px;
+        font-weight: normal;
+        line-height: 1;
+        color: rgba(0,0,0,0.87);
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .5;
+    }
+
+    .deleteCategory {
+        float: right;
+        font-size: 21px;
+        font-weight: normal;
+        line-height: 1;
+        color: rgba(0,0,0,0.87);
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .5;
+    }
+
+    .deleteCategory:hover {
+        color: red;
+    }
+
+    .deleteCategory:focus, .deleteCategory:hover {
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: 1;
+        outline: 0 none;
+    }
+
+    .edit {
+        float: right;
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .5;
+        padding: 2px 10px 0 0;
+    }
+
+    .addBookmarkIcon {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: 60px;
+        color: #009933;
+    }
+    .addBookmarkIcon:hover {
+        cursor: pointer;
+        color: #006600;
+    }
+    
+    .edit:hover {
+        color: #006600;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .divider {
+        width: 80%;
+    }
+
+    .bookmarkLinksColor a {
+        color: darkslategrey;
+    }
+
+    md-list-item.md-2-line .md-list-item-text h3,
+    md-list-item.md-2-line > .md-no-style .md-list-item-text h3, 
+    md-list-item.md-3-line .md-list-item-text h3, 
+    md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
+        color: darkslategrey;
+    }
+
+    md-input-container.categoryCreateInput input {
+        width: 233px;
+        border-color: black;
+    }
+        
+    md-input-container.categoryCreateInput input:active {
+        border-color: black;
+    }
+    
+    .searchField {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+    }
+    
+    .clearSearchFieldBtn {
+        margin-left: 10px;
+    }
+    
+    .searchField .md-button {
+        background-color: oldlace;
+        min-height: 0;
+        min-width: 0;
+        margin: 18px 0 0 10px;
+        width: 85px;
+        height: 27px;
+        line-height: normal;
+        text-transform: none;
+    }
+    
+    .categoryAdd .md-button {
+        text-transform: none;
+    }
+    
+    .addBookmarkName, .addBookmarkLink {
+        width: 523px;
+    }
+
+    .bookmarkEditInputs md-input-container input {
+        width: 510px;
+    }
+
+    .bookmarkCreateInputs md-input-container input {
+        width: 510px;   
+    }
+
+    .button-holder {
+        width: 510px;
+    }
+
+    .editForm {
+        margin-top: 50px;
+    }
+
+/* =============================================================================== */
+
+.mainView {
+    display: flex;
+}
+
+#copyright {
+    font-size: small;
+    color: grey;
+}
+
+.panel-default>.panel-heading {
+    text-align: center;
+}
+
+.panel-default {
+    width: 50%;
+}
+
+#myInput {
+    background: url("../images/search-icon.png") no-repeat;
+    width: 245px;
+    background-position: 5px 8px;
+    padding-left: 23px;
+}
+
+#form {
+    margin-top: 20px;
+}
+
+.updateButton {
+    margin: 10px 15px 10px 40px;
+    width: 200px;
+}
+
+.cancelButton{
+    margin: 10px 10px 10px 15px;
+    width: 200px;
+}
+
+.saveBookmark {
+    float: left;
+    margin-left: 20px;
+    width: 40%;
+}
+
+.cancelCreatingBookmark {
+    float: right;
+    margin-right: 20px;
+    width: 40%;
+}
+
+.glyphicon-star {
+    font-size: x-large;
+}
+
+.categoryList {
+    width: 240px;
+}
+
+button.list-group-item {
+    margin-top: 2px;
+}
+
+.logo > h3 {
+    cursor: pointer;
+}
+
+.list-group-item.active, .list-group-item.active:focus,
+ .list-group-item.active:hover {
+    background-color: lightslategrey;
+    border-color: lightslategrey;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@media screen and (max-width: 800px) {
+
+    .mainView {
+        display: initial;
+    }
+
+    .panel-default {
+        width: 75%;
+    }
+
+    .modal-dialog {
+        right: 0;
+    }
+
+    .updateBookmarkName, .updateBookmarkLink {
+        width: 75%;
+    }
+
+    .addBookmarkName, .addBookmarkLink {
+        width: 75%;
+    }
+
+    #select {
+        width: 75%;
+    }
+
+    .glyphicon-pencil {
+        float: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .mainView {
+        align-self: center;
+        display: initial;
+    }
+
+    #categoriesView {
+        margin: auto;
+    }
+
+    .panel-group .panel {
+        margin: auto;
+    }
+
+    .panel-default {
+        width: 100%;
+    }
+
+    #select {
+        width: 100%;
+    }
+
+    .updateBookmarkName, .updateBookmarkLink {
+        width: 100%;
+    }
+    .addBookmarkName, .addBookmarkLink {
+        width: 100%;
+    }
+
+    .glyphicon-plus {
+        position: absolute;
+        top: 2%;
+        right: 5%;
+
+    }
+
+    .glyphicon-pencil {
+        float: left;
+    }
+
+    .saveBookmark {
+        margin-left: 0;
+        width: 20%;
+    }
+
+    .cancelCreatingBookmark {
+        margin-right: 0;
+        float: none;
+        width: 20%;
+        margin-left: 70px;
+    }
+
+
+    .col-md-4, .col-md-6 {
+        padding: 0;
+    }
+
+    .updateButton {
+        margin: 10px 15px 10px 20px;
+        width: 35%;
+    }
+
+    .cancelButton{
+        margin: 10px 10px 10px 15px;
+        width: 35%;
+    }
+}
+ /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#categoriesView {
+    width: 255px;
+    margin: 15px 0 0 30px;
+}
+
+.categoryList a {
+    font-size: large;
+}
+
+.modal-footer {
+    text-align: center;
+    border-top: none;
+}
+
+/* ==========================================================================
+   ADDING CATEGORY ITEMS
+   ========================================================================== */
+
+.addCategoryBtn {
+    width: 235px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+
+}
+
+.addCategory {
+    width: 255px;
+    margin-top: 10px;
+}
+
+.saveCategory {
+    width: 40%;
+    margin: 5px 10px 10px 10px;
+}
+
+.cancelCategory {
+    width: 40%;
+    margin: 5px 10px 10px 10px;
+}
+

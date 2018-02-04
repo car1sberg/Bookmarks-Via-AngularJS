@@ -1,0 +1,54 @@
+
+<div class="title" flex>
+    <div class="searchField" layout="row">
+        <md-input-container md-no-float class="md-block">
+            <input ng-model="$ctrl.search.name"
+                   placeholder="Search bookmarks.."
+                   id="myInput">
+        </md-input-container>
+
+        <md-button class="md-raised clearSearchFieldBtn"
+                    ng-if="$ctrl.search.name.length > 0"
+                    ng-click="$ctrl.clearSearchField()"
+            >Clear Up</md-button>
+    </div>
+</div>
+
+
+
+<div flex class="bookmarkLinksColor animated fadeIn">
+    <md-list>
+        <md-list-item ng-repeat="bookmark in $ctrl.bookmarks | filter: {category: $ctrl.currentCategoryName} | filter: $ctrl.search">
+            <div flex="80">
+                <a href="{{bookmark.url}}">{{bookmark.name}}</a>
+
+                <i class="material-icons close"
+                ng-click="$ctrl.deleteBookmark(bookmark)">clear</i>
+
+                <i class="material-icons edit"
+                ui-sref="app.bookmarks.edit({bookmarkId: bookmark.id, 
+                 category:($ctrl.currentCategoryName) ? ($ctrl.currentCategoryName) : ''})"
+                 >create</i>
+
+                <md-divider class="divider"></md-divider>
+            </div>
+        </md-list-item>  
+    </md-list> 
+</div>
+
+
+<div ui-view="bookmark-edit" class="editForm" flex></div>
+    
+
+<!--ADDING FORM-->
+
+<div class="container">
+    <div ui-view="bookmark-create">
+        <i class="material-icons addBookmarkIcon"
+            ng-if="$ctrl.currentCategoryName"
+            ui-sref="app.bookmarks.create">playlist_add</i>
+    </div>
+</div>
+
+    
+
