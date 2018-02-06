@@ -2,7 +2,7 @@
 
     var categoryList = {
         templateUrl: 'app/categories/components/category-list.html',
-        controller: function($stateParams, $state, CategoriesService, BookmarksService){
+        controller: function($stateParams, $state, CategoriesService){
             var vm = this;
 
             CategoriesService.getCategories()
@@ -12,7 +12,6 @@
         
             vm.deleteCategory = function(category){
                 CategoriesService.deleteCategory(category);
-                BookmarksService.deleteBookmarksByCategory(category)
             }
         }
     };

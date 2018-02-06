@@ -4,7 +4,7 @@
     .service('CategoriesService', CategoriesService);
 
 
-    function CategoriesService($http, $stateParams, $q) {
+    function CategoriesService($http, $stateParams, $q, BookmarksService) {
         var vm = this,
             URLS = {
 			    FETCH: 'json/categories.json'
@@ -32,10 +32,11 @@
         }
 
         vm.deleteCategory = function(category){
-            var confirmStatus = confirm('It will devare the category, press "Yes" to continue');
+            var confirmStatus = confirm('It will delete the category, press "Yes" to continue');
            
             if (confirmStatus) {
                 _.pull(categories, category);
+                BookmarksService.deleteBookmarksByCategory(category)
             }
             else {
                 return vm.getCategories(); 
