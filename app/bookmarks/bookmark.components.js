@@ -11,11 +11,10 @@
             BookmarksService.getBookmarks()
                 .then(function(result){
                     vm.bookmarks = result;
-                });
+                })
 
             vm.deleteBookmark = function(bookmark){
                 BookmarksService.deleteBookmark(bookmark);
-                console.log('deleted');
             }
 
             vm.clearSearchField = function(){
@@ -31,12 +30,16 @@
             
             vm.createBookmark = function(bookmark){
                 bookmark.category = $stateParams.category;
-                BookmarksService.createBookmark(bookmark);
+                setTimeout(function(){
+                    BookmarksService.createBookmark(bookmark);
+                }, 400)
                 vm.cancelCreating();
             }
 
             vm.cancelCreating = function(){
-                $state.go('app.bookmarks');
+                setTimeout(function(){
+                    $state.go('app.bookmarks');
+                }, 400)
             }
         }
     };
@@ -50,13 +53,17 @@
             vm.isEditingBookmark = angular.copy(currentBookmark);
             
             vm.updateBookmark = function(bookmark){
-                BookmarksService.updateBookmark(bookmark);
-                vm.cancelEditing();  
+                setTimeout(function(){
+                    BookmarksService.updateBookmark(bookmark);
+                    $state.go('app.bookmarks');
+                }, 400)
             }
 
             vm.cancelEditing = function(){
-                $state.go('app.bookmarks');
                 category: $stateParams.category;
+                setTimeout(function(){
+                    $state.go('app.bookmarks');
+                }, 400)
             }
         }
     }
@@ -67,4 +74,4 @@
         .component('bookmarkList', bookmarkList)
         .component('bookmarkCreate', bookmarkCreate)
         .component('bookmarkEdit', bookmarkEdit)
-}())
+}());

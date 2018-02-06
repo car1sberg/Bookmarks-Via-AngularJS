@@ -7,6 +7,7 @@
             'ngAnimate',
             'bookmark.states',
             'category.states',
+            'theme'
         ])
         .config(configure)
 
@@ -36,4 +37,4 @@
 
         $urlRouterProvider.otherwise('/');
     };  
-}())
+}());

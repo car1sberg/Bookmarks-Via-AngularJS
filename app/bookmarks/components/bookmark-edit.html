@@ -1,11 +1,10 @@
 
-<form ng-submit="$ctrl.updateBookmark($ctrl.isEditingBookmark)">
-    <div flex class="bookmarkEditInputs">
+<form ng-submit="$ctrl.updateBookmark($ctrl.isEditingBookmark)" class="animated fadeIn">
+    <div class="bookmarkEditInputs" flex>
         <md-input-container class="md-block" flex-gt-sm>
             <label>Name</label>
             <input ng-model="$ctrl.isEditingBookmark.name">
-        </md-input-container>
-            
+        </md-input-container> 
         <md-input-container class="md-block" flex-gt-sm>
             <label>Link</label>
             <input ng-model="$ctrl.isEditingBookmark.url">
@@ -13,7 +12,9 @@
     </div>
 
     <md-button class="md-raised md-primary updateButton"
-                type="submit">Update</md-button>
-        <md-button class="md-raised md-warn cancelButton"
-                ng-click="$ctrl.cancelEditing()">Cancel</md-button>
+               type="submit">Update
+    </md-button>
+    <md-button class="md-raised md-warn cancelButton"
+               ng-click="$ctrl.cancelEditing()">Cancel
+    </md-button>
 </form>

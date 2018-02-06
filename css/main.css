@@ -115,6 +115,7 @@ textarea {
     }
 
     .deleteCategory {
+        position: absolute;
         float: right;
         font-size: 21px;
         font-weight: normal;
@@ -154,11 +155,11 @@ textarea {
         top: 5%;
         right: 5%;
         font-size: 60px;
-        color: #009933;
+        color: lightslategray;
     }
     .addBookmarkIcon:hover {
         cursor: pointer;
-        color: #006600;
+        color: green;
     }
     
     .edit:hover {
@@ -175,11 +176,8 @@ textarea {
         color: darkslategrey;
     }
 
-    md-list-item.md-2-line .md-list-item-text h3,
-    md-list-item.md-2-line > .md-no-style .md-list-item-text h3, 
-    md-list-item.md-3-line .md-list-item-text h3, 
-    md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
-        color: darkslategrey;
+    .categoryColor > h3 {
+        color: darkslategrey !important;
     }
 
     md-input-container.categoryCreateInput input {
@@ -302,6 +300,7 @@ button.list-group-item {
 
 .logo > h3 {
     cursor: pointer;
+    color: cadetblue;
 }
 
 .list-group-item.active, .list-group-item.active:focus,

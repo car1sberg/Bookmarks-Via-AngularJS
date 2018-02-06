@@ -2,21 +2,19 @@
 
     var categoryList = {
         templateUrl: 'app/categories/components/category-list.html',
-        controller: function($stateParams, $state, CategoriesService){
+        controller: function($stateParams, $state, CategoriesService, BookmarksService){
             var vm = this;
-
 
             CategoriesService.getCategories()
                 .then(function(result){
                     vm.categories = result;
                 });
-            // vm.deleteCategory = CategoriesService.deleteCategory;
-
+        
             vm.deleteCategory = function(category){
                 CategoriesService.deleteCategory(category);
+                BookmarksService.deleteBookmarksByCategory(category)
             }
         }
-
     };
 
     var categoryCreate = {
@@ -25,12 +23,16 @@
             var vm = this;
 
             vm.createCategory = function(category){
-                CategoriesService.createCategory(category);
-                vm.cancelCreating();
-            }
-            
+                setTimeout(function(){
+                    CategoriesService.createCategory(category);
+                    $state.go('app.categories');
+                }, 400)
+            }            
+
             vm.cancelCreating = function(){
-                $state.go('app.categories');
+                setTimeout(function(){
+                    $state.go('app.categories');
+                }, 400)                
             }
         }
     }

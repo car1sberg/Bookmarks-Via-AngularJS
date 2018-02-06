@@ -22,16 +22,17 @@
 
         vm.createCategory = function(category){
             categories.push({
-            id: _.uniqueId(),
+            id: _.uniqueId('100'),
             name: category
             });  
         }
 
-        vm.getCategories = function() {
+        vm.getCategories = function(){
             return (categories) ? $q.when(categories) : $http.get(URLS.FETCH).then(cacheCategories);
         }
+
         vm.deleteCategory = function(category){
-            let confirmStatus = confirm('It will delete the category, press "Yes" to continue');
+            var confirmStatus = confirm('It will devare the category, press "Yes" to continue');
            
             if (confirmStatus) {
                 _.pull(categories, category);
@@ -43,4 +44,4 @@
         }
     }
     
-}())
+}());

@@ -23,8 +23,8 @@
    */
   
   body {
-    margin: 0;
-      background-color: #cccc;
+    background-color: #cccc;
+    height: auto;
   }
   
   /**

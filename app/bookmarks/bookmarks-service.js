@@ -43,7 +43,7 @@
 		}
 
 		vm.createBookmark = function(bookmark){
-			bookmark.id = _.uniqueId();
+			bookmark.id = parseInt(_.uniqueId('100'));
 			bookmarks.push(bookmark);
 		}
 
@@ -57,5 +57,9 @@
 			var index = _.findIndex(bookmarks, {id: bookmark.id});
 			bookmarks[index] = bookmark;
 		}
+
+		vm.deleteBookmarksByCategory = function(item){	
+			_.remove(bookmarks, {category: item.name});
+        }
 	}
 })();

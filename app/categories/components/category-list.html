@@ -1,33 +1,36 @@
-<div flex class="logo">
+
+    <!-- Logo -->
+<div class="logo" flex>
     <h3 ui-sref="app.categories">Bookmark Manager</h3>
     <p id="copyright">created by Volodymyr Ersteniuk</p>
 </div>
 
-
+    <!-- Category list -->
 <div flex class="categoryLinksColor">
     <md-list>
         <md-subheader class="md-no-sticky subheader">Categories</md-subheader>
-        <md-list-item class="md-3-line activeCategory"
+        <md-list-item class="md-3-line activeCategory itemsFadeOut"
                       ng-repeat="category in $ctrl.categories"
                       ui-sref="app.bookmarks({category: category.name})"
                       ui-sref-active="active">
-            <div class="md-list-item-text" layout="column">
-                <h3>{{ category.name }}
-                    <!-- <a><i class="material-icons deleteCategory"
-                        ng-click="$ctrl.deleteCategory(category)">clear</i>
-                    </a> -->
-                </h3>         
+            <div class="md-list-item-text" layout="row">
+                <div flex="90" class="categoryColor">
+                    <h3>{{ category.name }}</h3>
+                </div>
+                <div flex>
+                    <a><i class="material-icons deleteCategory"
+                          ng-click="$ctrl.deleteCategory(category)">clear</i></a>
+                </div>
             </div> 
         </md-list-item>
     </md-list>   
 </div>
-    
 
+    <!-- Add a category -->
 <div class="categoryAdd">
     <div ui-view="category-create">
         <md-button 
-            ui-sref="app.categories.create" 
-            class="md-raised addCategoryBtn">Add Category</md-button>
+            ui-sref="app.categories.create"
+            class="md-raised md-primary addCategoryBtn">Add Category</md-button>
     </div>
 </div>
-

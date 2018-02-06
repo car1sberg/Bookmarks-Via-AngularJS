@@ -1,17 +1,14 @@
 
-<form class="addCategory" 
+<form class="addCategory animated fadeIn" 
       ng-submit="$ctrl.createCategory($ctrl.categoryName)">
         <md-input-container class="md-block categoryCreateInput" flex-gt-sm>
                 <label>Category name</label>
                 <input ng-model="$ctrl.categoryName"
-                        maxlength="40"
-                        required>
+                       maxlength="40"
+                       required>
         </md-input-container>
-
         <md-button class="md-raised md-primary saveCategory" 
-                type="submit"
-                >Save</md-button>
+                   type="submit">Save</md-button>
         <md-button class="md-raised md-warn cancelCategory" 
-               ng-click="$ctrl.cancelCreating()"
-            >Cancel</md-button>
+                   ng-click="$ctrl.cancelCreating()">Cancel</md-button>
 </form>
