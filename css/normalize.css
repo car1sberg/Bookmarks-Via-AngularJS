@@ -25,6 +25,7 @@
   body {
     background-color: #cccc;
     height: auto;
+    font-family: 'Source Code Pro', monospace;
   }
   
   /**
@@ -143,7 +144,7 @@
   code,
   kbd,
   samp {
-    font-family: monospace, monospace; /* 1 */
+    font-family: monospace, monospace;
     font-size: 1em; /* 2 */
   }
   
@@ -243,7 +244,8 @@
   optgroup,
   select,
   textarea {
-    font-family: sans-serif; /* 1 */
+    /* font-family: sans-serif; */
+    font-family: 'Source Code Pro', monospace;
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */

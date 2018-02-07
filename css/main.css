@@ -185,9 +185,9 @@ textarea {
         border-color: black;
     }
         
-    md-input-container.categoryCreateInput input:active {
+    /* md-input-container.categoryCreateInput input:active {
         border-color: black;
-    }
+    } */
     
     .searchField {
         margin-top: 20px;

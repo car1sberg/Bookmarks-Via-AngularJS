@@ -3,7 +3,7 @@
     // Generating bookmark list and delete method
     var bookmarkList = {
         templateUrl: 'app/bookmarks/components/bookmark-list.html',
-        controller: function ($stateParams, BookmarksService){
+        controller: function ($stateParams, $state, BookmarksService){
             var vm = this;
 
             vm.currentCategoryName = $stateParams.category;
@@ -18,11 +18,11 @@
             }
 
             vm.clearSearchField = function(){
-                vm.search.name = '';   
+                vm.search.name = '';
             }
         }
     };
-        // ~~~~ Adding Bookmark ~~~~~
+        // ~~~~ Adding Bookmark ~~~~~   
     var bookmarkCreate = {
         templateUrl: 'app/bookmarks/components/bookmark-create.html',
         controller: function($stateParams, $state, BookmarksService){

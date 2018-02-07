@@ -5,9 +5,9 @@
     {"id": 0, "name": "WOOOOOW", "url": "#", "category": "Favorite"},
     {"id": 1, "name": "HOOORAY", "url": "#", "category": "GoodStuff"},
     {"id": 2, "name": "OMG", "url": "#", "category": "Favorite"},
-    {"id": 3, "name": "STFU", "url": "#", "category": "Music"},
-    {"id": 4, "name": "WTF", "url": "#", "category": "Fun"},
-    {"id": 5, "name": "JESUS", "url": "#", "category": "Fun"},
+    {"id": 3, "name": "AC/DC", "url": "#", "category": "Music"},
+    {"id": 4, "name": "Friend Zone", "url": "#", "category": "Fun"},
+    {"id": 5, "name": "9GAG", "url": "#", "category": "Fun"},
     {"id": 6, "name": "HolyCrap", "url": "#", "category": "Music"},
     {"id": 7, "name": "Whaaaaat", "url": "#", "category": "GoodStuff"},
     {"id": 8, "name": "Keep Calm", "url": "#", "category": "Favorite"}
