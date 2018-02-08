@@ -18,31 +18,36 @@
             }
 
             vm.clearSearchField = function(){
-                vm.search.name = '';
+                    vm.search.name = '';
             }
         }
     };
-        // ~~~~ Adding Bookmark ~~~~~   
-    var bookmarkCreate = {
-        templateUrl: 'app/bookmarks/components/bookmark-create.html',
-        controller: function($stateParams, $state, BookmarksService){
-            var vm = this;
-            
-            vm.createBookmark = function(bookmark){
-                bookmark.category = $stateParams.category;
-                setTimeout(function(){
-                    BookmarksService.createBookmark(bookmark);
-                }, 400)
-                vm.cancelCreating();
-            }
 
-            vm.cancelCreating = function(){
-                setTimeout(function(){
-                    $state.go('app.bookmarks');
-                }, 400)
+        // ~~~~ Adding Bookmark ~~~~~  
+
+        var bookmarkCreate = {
+            controller: function($stateParams, $state, BookmarksService, ngDialog){  
+                ngDialog.open({ 
+                    template: 'app/bookmarks/components/bookmark-create.html',
+                    controllerAs: 'dialogCreateCtrl',
+                    controller: function(){
+                        var self = this;
+
+                        self.createBookmark = function(){
+                            self.newBookmark.category = $stateParams.category;
+                            BookmarksService.createBookmark(self.newBookmark);
+                            self.cancelCreating();
+                            ngDialog.close();
+                        }
+            
+                        self.cancelCreating = function(){
+                            $state.go('app.bookmarks');
+                            ngDialog.close();
+                        };
+                    }
+                });
             }
-        }
-    };
+        };
 
     // ~~~~ Edit and Update methods ~~~~
     var bookmarkEdit = {
@@ -53,17 +58,12 @@
             vm.isEditingBookmark = angular.copy(currentBookmark);
             
             vm.updateBookmark = function(bookmark){
-                setTimeout(function(){
-                    BookmarksService.updateBookmark(bookmark);
-                    $state.go('app.bookmarks');
-                }, 400)
+                BookmarksService.updateBookmark(bookmark);
+                $state.go('app.bookmarks');
             }
 
             vm.cancelEditing = function(){
-                category: $stateParams.category;
-                setTimeout(function(){
-                    $state.go('app.bookmarks');
-                }, 400)
+                $state.go('app.bookmarks');
             }
         }
     }

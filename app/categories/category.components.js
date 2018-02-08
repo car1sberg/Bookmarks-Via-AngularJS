@@ -22,16 +22,12 @@
             var vm = this;
 
             vm.createCategory = function(category){
-                setTimeout(function(){
-                    CategoriesService.createCategory(category);
-                    $state.go('app.categories');
-                }, 400)
+                CategoriesService.createCategory(category);
+                $state.go('app.categories');
             }            
 
             vm.cancelCreating = function(){
-                setTimeout(function(){
-                    $state.go('app.categories');
-                }, 400)                
+                $state.go('app.categories');
             }
         }
     }

@@ -1,6 +1,8 @@
 
 <!-- Search field with clear button -->
-<div class="title" flex>
+<div class="title"
+     ng-if="$ctrl.bookmarks.length > 0"
+     flex>
     <div class="searchField" layout="row">
         <md-input-container md-no-float class="md-block">
             <input ng-model="$ctrl.search.name"

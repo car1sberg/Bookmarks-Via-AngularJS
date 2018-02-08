@@ -218,20 +218,12 @@ textarea {
         width: 523px;
     }
 
-    .bookmarkEditInputs md-input-container input {
-        width: 510px;
-    }
-
-    .bookmarkCreateInputs md-input-container input {
-        width: 510px;   
-    }
-
-    .button-holder {
-        width: 510px;
-    }
-
     .editForm {
         margin-top: 50px;
+    }
+
+    .ngdialog.ngdialog-theme-default .ngdialog-close {
+        outline: 0 none;
     }
 
 /* =============================================================================== */
@@ -275,14 +267,11 @@ textarea {
 }
 
 .saveBookmark {
-    float: left;
-    margin-left: 20px;
     width: 40%;
 }
 
 .cancelCreatingBookmark {
     float: right;
-    margin-right: 20px;
     width: 40%;
 }
 

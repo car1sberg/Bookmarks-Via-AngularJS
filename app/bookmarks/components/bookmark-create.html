@@ -1,9 +1,9 @@
 
-<form ng-submit="$ctrl.createBookmark($ctrl.newBookmark)" class="animated fadeIn">
-        <div class="bookmarkCreateInputs" flex>
+<form ng-submit="dialogCreateCtrl.createBookmark()">
+        <div flex>
                 <md-input-container class="md-block" flex-gt-sm>
                 <label>Bookmark Name</label>
-                <input ng-model="$ctrl.newBookmark.name"
+                <input ng-model="dialogCreateCtrl.newBookmark.name"
                        class="addBookmarkName"
                        maxlength="30"
                        required>
@@ -11,7 +11,7 @@
                 
                 <md-input-container class="md-block" flex-gt-sm>
                 <label>Bookmark Link</label>
-                <input ng-model="$ctrl.newBookmark.url"
+                <input ng-model="dialogCreateCtrl.newBookmark.url"
                        class="addBookmarkLink"
                        required>
                 </md-input-container>
@@ -21,7 +21,7 @@
                            type="submit">Create
                 </md-button>
                 <md-button class="md-raised md-warn cancelCreatingBookmark"
-                           ng-click="$ctrl.cancelCreating()">Cancel
+                           ng-click="dialogCreateCtrl.cancelCreating()">Cancel
                 </md-button>
         </div>
 </form>
