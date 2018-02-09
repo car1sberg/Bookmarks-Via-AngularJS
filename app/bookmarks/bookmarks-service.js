@@ -58,8 +58,8 @@
 			bookmarks[index] = bookmark;
 		}
 
-		vm.deleteBookmarksByCategory = function(item){	
-			_.remove(bookmarks, {category: item.name});
+		vm.deleteBookmarksByCategory = function(category){	
+			_.remove(bookmarks, {category: category.name});
         }
 	}
 })();

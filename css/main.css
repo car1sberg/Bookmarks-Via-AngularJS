@@ -77,6 +77,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   .ngdialog.ngdialog-theme-default .ngdialog-content {
+       font-family: 'Source Code Pro', monospace;
+   }
+
    md-list-item.md-3-line, md-list-item.md-3-line > .md-no-style {
     height: 50px;
     min-height: 30px;
@@ -181,14 +185,9 @@ textarea {
     }
 
     md-input-container.categoryCreateInput input {
-        width: 233px;
-        border-color: black;
+        margin-bottom: -20px;
     }
         
-    /* md-input-container.categoryCreateInput input:active {
-        border-color: black;
-    } */
-    
     .searchField {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -226,6 +225,15 @@ textarea {
         outline: 0 none;
     }
 
+    .confirmCategoryYes, .confirmCategoryNo {
+        width: 40%;
+        font-size: 18px;
+    }
+
+    .confirmCategoryBtns .md-button {
+        text-transform: none;
+    }
+
 /* =============================================================================== */
 
 .mainView {
@@ -256,21 +264,11 @@ textarea {
     margin-top: 20px;
 }
 
-.updateButton {
+.updateButton, .cancelButton {
     width: 40%;
 }
 
-.cancelButton{
-    width: 40%;
-    float: right;
-}
-
-.saveBookmark {
-    width: 40%;
-}
-
-.cancelCreatingBookmark {
-    float: right;
+.saveBookmark, .cancelCreatingBookmark {
     width: 40%;
 }
 
@@ -433,11 +431,9 @@ button.list-group-item {
 
 .saveCategory {
     width: 40%;
-    margin: 5px 10px 10px 10px;
 }
 
 .cancelCategory {
     width: 40%;
-    margin: 5px 10px 10px 10px;
 }
 

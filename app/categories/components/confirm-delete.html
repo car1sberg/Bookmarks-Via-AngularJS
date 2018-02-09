@@ -1,0 +1,11 @@
+<div flex>
+    <div>
+        <h4>This action will also delete all its bookmarks. Continue?</h4>
+    </div>
+    <div layout="row" layout-align="space-around none" class="confirmCategoryBtns">
+        <md-button class="md-raised md-primary confirmCategoryYes" 
+                   ng-click="confirmDelCategoryCtrl.delete()">Yeap!</md-button>
+        <md-button class="md-raised md-warn confirmCategoryNo" 
+                   ng-click="confirmDelCategoryCtrl.closeDialog()">Hmm, nope</md-button>
+    </div>
+</div>

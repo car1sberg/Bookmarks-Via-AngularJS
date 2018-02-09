@@ -3,7 +3,6 @@
     angular.module('categories.service', [])
     .service('CategoriesService', CategoriesService);
 
-
     function CategoriesService($http, $stateParams, $q, BookmarksService) {
         var vm = this,
             URLS = {
@@ -32,17 +31,8 @@
         }
 
         vm.deleteCategory = function(category){
-            var confirmStatus = confirm('It will delete the category, press "Yes" to continue');
-           
-            if (confirmStatus) {
-                _.pull(categories, category);
-                BookmarksService.deleteBookmarksByCategory(category)
-            }
-            else {
-                return vm.getCategories(); 
-            }
-
+            _.pull(categories, category);
+            BookmarksService.deleteBookmarksByCategory(category)
         }
     }
-    
 }());

@@ -2,7 +2,7 @@
 
     var categoryList = {
         templateUrl: 'app/categories/components/category-list.html',
-        controller: function($stateParams, $state, CategoriesService){
+        controller: function($stateParams, $state, CategoriesService, ngDialog, $timeout){
             var vm = this;
 
             CategoriesService.getCategories()
@@ -11,7 +11,25 @@
                 });
         
             vm.deleteCategory = function(category){
-                CategoriesService.deleteCategory(category);
+                ngDialog.open({
+                    template: 'app/categories/components/confirm-delete.html',
+                    controllerAs: 'confirmDelCategoryCtrl',
+                    controller: function(){
+                        var self = this;
+
+                        self.closeDialog = function(){
+                            ngDialog.close();
+                        }
+                        self.delete = function(){
+                            self.closeDialog();
+                            CategoriesService.deleteCategory(category);
+                            $timeout(function(){
+                                $state.go('app.categories');
+                            }, 800)
+                        }
+                    }
+                });
+                
             }
         }
     };

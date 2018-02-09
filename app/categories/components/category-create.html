@@ -7,8 +7,11 @@
                        maxlength="40"
                        required>
         </md-input-container>
-        <md-button class="md-raised md-primary saveCategory" 
-                   type="submit">Save</md-button>
-        <md-button class="md-raised md-warn cancelCategory" 
-                   ng-click="$ctrl.cancelCreating()">Cancel</md-button>
+        <div flex layout="row" layout-align="space-around none">
+            <md-button class="md-raised md-primary saveCategory" 
+                       type="submit">Save</md-button>
+            <md-button class="md-raised md-warn cancelCategory" 
+                       ng-click="$ctrl.cancelCreating()">Cancel</md-button>
+        </div>
+        
 </form>
