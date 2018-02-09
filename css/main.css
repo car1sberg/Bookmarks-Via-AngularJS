@@ -257,13 +257,12 @@ textarea {
 }
 
 .updateButton {
-    margin: 10px 15px 10px 40px;
-    width: 200px;
+    width: 40%;
 }
 
 .cancelButton{
-    margin: 10px 10px 10px 15px;
-    width: 200px;
+    width: 40%;
+    float: right;
 }
 
 .saveBookmark {

@@ -51,20 +51,30 @@
 
     // ~~~~ Edit and Update methods ~~~~
     var bookmarkEdit = {
-        templateUrl: 'app/bookmarks/components/bookmark-edit.html',
-        controller: function($stateParams, $state, BookmarksService){
-            var vm = this;
-            var currentBookmark = BookmarksService.findBookmarkById($stateParams.bookmarkId);
-            vm.isEditingBookmark = angular.copy(currentBookmark);
-            
-            vm.updateBookmark = function(bookmark){
-                BookmarksService.updateBookmark(bookmark);
-                $state.go('app.bookmarks');
-            }
+        // templateUrl: 'app/bookmarks/components/bookmark-edit.html',
+        controller: function($stateParams, $state, BookmarksService, ngDialog){
+            // var vm = this;
+            ngDialog.open({
+                template: 'app/bookmarks/components/bookmark-edit.html',
+                controllerAs: 'dialogEditCtrl',
+                controller: function(){
+                    var self = this;
+                    var currentBookmark = BookmarksService.findBookmarkById($stateParams.bookmarkId);
+                    self.isEditingBookmark = angular.copy(currentBookmark);
+                    
+                    self.updateBookmark = function(bookmark){
+                        BookmarksService.updateBookmark(bookmark);
+                        $state.go('app.bookmarks');
+                        ngDialog.close();
+                    }
 
-            vm.cancelEditing = function(){
-                $state.go('app.bookmarks');
-            }
+                    self.cancelEditing = function(){
+                        $state.go('app.bookmarks');
+                        ngDialog.close();
+                    }
+                }
+            });
+            
         }
     }
 
