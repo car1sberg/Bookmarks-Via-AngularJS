@@ -176,8 +176,22 @@ textarea {
         width: 80%;
     }
 
-    .bookmarkLinksColor a {
+    .categoryList {
+        width: 255px;
+        margin: 15px 0 0 30px;
+    }
+
+    .categoryList a {
         color: darkslategrey;
+    }
+
+    .categoryAdd {
+        width: 255px;
+        margin: 15px 0 0 30px;
+    }
+
+    .categoryAdd .md-button {
+        text-transform: none;
     }
 
     .categoryColor > h3 {
@@ -206,10 +220,6 @@ textarea {
         width: 85px;
         height: 27px;
         line-height: normal;
-        text-transform: none;
-    }
-    
-    .categoryAdd .md-button {
         text-transform: none;
     }
     
@@ -245,14 +255,6 @@ textarea {
     color: grey;
 }
 
-.panel-default>.panel-heading {
-    text-align: center;
-}
-
-.panel-default {
-    width: 50%;
-}
-
 #myInput {
     background: url("../images/search-icon.png") no-repeat;
     width: 245px;
@@ -272,16 +274,13 @@ textarea {
     width: 40%;
 }
 
-.glyphicon-star {
-    font-size: x-large;
-}
-
-.categoryList {
-    width: 240px;
-}
-
 button.list-group-item {
     margin-top: 2px;
+}
+
+.logo {
+    width: 255px;
+    margin: 15px 0 0 30px;
 }
 
 .logo > h3 {
@@ -304,28 +303,8 @@ button.list-group-item {
         display: initial;
     }
 
-    .panel-default {
-        width: 75%;
-    }
-
-    .modal-dialog {
-        right: 0;
-    }
-
-    .updateBookmarkName, .updateBookmarkLink {
-        width: 75%;
-    }
-
-    .addBookmarkName, .addBookmarkLink {
-        width: 75%;
-    }
-
-    #select {
-        width: 75%;
-    }
-
-    .glyphicon-pencil {
-        float: left;
+    .bookmarkList {
+        margin-left: 30px;
     }
 }
 
@@ -336,82 +315,11 @@ button.list-group-item {
         display: initial;
     }
 
-    #categoriesView {
-        margin: auto;
-    }
-
-    .panel-group .panel {
-        margin: auto;
-    }
-
-    .panel-default {
-        width: 100%;
-    }
-
-    #select {
-        width: 100%;
-    }
-
-    .updateBookmarkName, .updateBookmarkLink {
-        width: 100%;
-    }
-    .addBookmarkName, .addBookmarkLink {
-        width: 100%;
-    }
-
-    .glyphicon-plus {
-        position: absolute;
-        top: 2%;
-        right: 5%;
-
-    }
-
-    .glyphicon-pencil {
-        float: left;
-    }
-
-    .saveBookmark {
-        margin-left: 0;
-        width: 20%;
-    }
-
-    .cancelCreatingBookmark {
-        margin-right: 0;
-        float: none;
-        width: 20%;
-        margin-left: 70px;
-    }
-
-
-    .col-md-4, .col-md-6 {
-        padding: 0;
-    }
-
-    .updateButton {
-        margin: 10px 15px 10px 20px;
-        width: 35%;
-    }
-
-    .cancelButton{
-        margin: 10px 10px 10px 15px;
-        width: 35%;
+    .bookmarkList {
+        margin-left: 30px;
     }
 }
  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-#categoriesView {
-    width: 255px;
-    margin: 15px 0 0 30px;
-}
-
-.categoryList a {
-    font-size: large;
-}
-
-.modal-footer {
-    text-align: center;
-    border-top: none;
-}
 
 /* ==========================================================================
    ADDING CATEGORY ITEMS
@@ -421,19 +329,10 @@ button.list-group-item {
     width: 235px;
     margin-bottom: 20px;
     margin-top: 10px;
+    font-size: 18px;
 
 }
 
-.addCategory {
-    width: 255px;
-    margin-top: 10px;
-}
-
-.saveCategory {
+.saveCategory, .cancelCategory {
     width: 40%;
 }
-
-.cancelCategory {
-    width: 40%;
-}
-

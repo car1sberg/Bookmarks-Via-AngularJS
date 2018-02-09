@@ -6,7 +6,7 @@
 </div>
 
     <!-- Category list -->
-<div flex class="categoryLinksColor">
+<div flex class="categoryList" layout="column">
     <md-list>
         <md-subheader class="md-no-sticky subheader">Categories</md-subheader>
         <md-list-item class="md-3-line activeCategory itemsFadeOut"
@@ -14,7 +14,7 @@
                       ui-sref="app.bookmarks({category: category.name})"
                       ui-sref-active="active">
             <div class="md-list-item-text" layout="row">
-                <div flex="90" class="categoryColor">
+                <div flex="95" class="categoryColor">
                     <h3>{{ category.name }}</h3>
                 </div>
                 <div flex>

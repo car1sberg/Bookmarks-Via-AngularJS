@@ -2,11 +2,8 @@
 <div class="mainView" flex layout="row">
 
     <!--CATEGORY LIST-->
-    <div class="categories" layout="column" flex="33">
-        <div ui-view="categories" class="categoryList" id="categoriesView">   
-        </div>   
-    </div>
+    <div ui-view="categories" layout="column" flex="33"></div>   
 
     <!--BOOKMARK LIST-->
-    <div ui-view="bookmarks" id="bookmarkList" layout="column" flex></div>
+    <div ui-view="bookmarks" layout="column" class="bookmarkList" flex></div>
 </div>
