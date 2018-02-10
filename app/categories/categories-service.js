@@ -3,7 +3,7 @@
     angular.module('categories.service', [])
     .service('CategoriesService', CategoriesService);
 
-    function CategoriesService($http, $stateParams, $q, BookmarksService) {
+    function CategoriesService($http, $stateParams, $q, BookmarksService, ngDialog) {
         var vm = this,
             URLS = {
 			    FETCH: 'json/categories.json'
@@ -23,7 +23,11 @@
             categories.push({
             id: _.uniqueId('100'),
             name: category
-            });  
+            });             
+        }
+
+        vm.categoryExists = function(category){
+            return _.find(categories, {name: category});
         }
 
         vm.getCategories = function(){

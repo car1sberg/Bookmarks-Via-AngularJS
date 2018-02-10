@@ -36,12 +36,26 @@
 
     var categoryCreate = {
         templateUrl: 'app/categories/components/category-create.html',
-        controller: function ($stateParams, $state, CategoriesService){
+        controller: function ($stateParams, $state, CategoriesService, ngDialog, $timeout){
             var vm = this;
 
             vm.createCategory = function(category){
-                CategoriesService.createCategory(category);
-                $state.go('app.categories');
+                var categoryAlreadyExists = CategoriesService.categoryExists(category);
+
+                if (categoryAlreadyExists) {
+                    ngDialog.open({
+                        template: 'app/categories/components/category-exists.html',
+                        controller: function(){
+                            $timeout(function(){
+                                ngDialog.close();
+                            }, 3000)
+                        }
+                    });
+                }
+                else {
+                    CategoriesService.createCategory(category);
+                    $state.go('app.categories'); 
+                }
             }            
 
             vm.cancelCreating = function(){
