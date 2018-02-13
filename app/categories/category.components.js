@@ -44,6 +44,10 @@
             vm.logoClick = function(){
                 ActionService.getMessage('You are at the main view');
             }
+
+            vm.categoryClick = function(category){
+                ActionService.getMessage(`${category} category is chosen`)
+            }
         }
     };
 

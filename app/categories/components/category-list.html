@@ -13,7 +13,8 @@
         <md-list-item class="md-3-line activeCategory itemsFadeOut"
                       ng-repeat="category in $ctrl.categories"
                       ui-sref="app.bookmarks({category: category.name})"
-                      ui-sref-active="active">
+                      ui-sref-active="active"
+                      ng-click="$ctrl.categoryClick(category.name)">
             <div class="md-list-item-text" layout="row">
                 <div flex="95" class="categoryColor">
                     <h3>{{ category.name }}</h3>
