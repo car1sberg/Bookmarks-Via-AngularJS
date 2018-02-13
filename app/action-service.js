@@ -8,7 +8,6 @@
         };
 
         self.getMessage = function(data){
-            console.log('incoming service\'s data: ', data);
             self.setMessage(data);
         };
 

@@ -274,11 +274,11 @@ textarea {
     color: grey;
 }
 
-.myInput {
+.searchContainer .myInput {
     background: url("../images/search-icon.png") no-repeat;
-    width: 245px;
     background-position: 5px 8px;
     padding-left: 23px;
+    width: 245px;
 }
 
 #form {

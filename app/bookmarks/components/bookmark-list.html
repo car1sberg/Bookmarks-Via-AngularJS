@@ -4,12 +4,12 @@
      ng-if="$ctrl.bookmarks.length > 0"
      flex>
     <div class="searchField" layout="row">
-        <md-input-container md-no-float class="md-block">
+        <md-input-container md-no-float class="md-block searchContainer">
             <input ng-model="$ctrl.search.name"
                    placeholder="Search bookmarks..."
                    class="myInput"
                    ng-change="$ctrl.searchFieldClick()">
-        </md-input-container>
+        </md-input-container>   
         <md-button class="md-raised md-primary clearSearchFieldBtn"
                    ng-if="$ctrl.search.name.length > 0"
                    ng-click="$ctrl.clearSearchField()">Clear Up</md-button>
