@@ -46,7 +46,6 @@
 			bookmark.id = parseInt(_.uniqueId('100'));
 			bookmarks.push(bookmark);
 		}
-
 		
 		vm.findBookmarkById = function(bookmarkId){
 			bookmarkId = parseInt(bookmarkId);

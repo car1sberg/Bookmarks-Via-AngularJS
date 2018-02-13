@@ -1,7 +1,8 @@
 
     <!-- Logo -->
 <div class="logo" flex>
-    <h3 ui-sref="app.categories">Bookmark Manager</h3>
+    <h3 ui-sref="app.categories"
+        ng-click="$ctrl.logoClick()">Bookmark Manager</h3>
     <p id="copyright">created by Volodymyr Ersteniuk</p>
 </div>
 
@@ -31,6 +32,7 @@
     <div ui-view="category-create">
         <md-button 
             ui-sref="app.categories.create"
+            ng-click="$ctrl.categoryCreateClick()"
             class="md-raised md-primary addCategoryBtn">Add Category</md-button>
     </div>
 </div>

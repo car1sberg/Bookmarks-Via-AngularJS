@@ -7,7 +7,8 @@
         <md-input-container md-no-float class="md-block">
             <input ng-model="$ctrl.search.name"
                    placeholder="Search bookmarks..."
-                   id="myInput">
+                   class="myInput"
+                   ng-change="$ctrl.searchFieldClick()">
         </md-input-container>
         <md-button class="md-raised md-primary clearSearchFieldBtn"
                    ng-if="$ctrl.search.name.length > 0"
@@ -25,6 +26,7 @@
                 <i class="material-icons close"
                    ng-click="$ctrl.deleteBookmark(bookmark)">clear</i>
                 <i class="material-icons edit"
+                   ng-click="$ctrl.editBookmarkClick(bookmark.name)"
                    ui-sref="app.bookmarks.edit({bookmarkId: bookmark.id, 
                     category:($ctrl.currentCategoryName) ? ($ctrl.currentCategoryName) : ''})">create</i>
                 <md-divider class="divider"></md-divider>
@@ -41,6 +43,7 @@
     <div ui-view="bookmark-create">
         <i class="material-icons addBookmarkIcon"
            ng-if="$ctrl.currentCategoryName"
+           ng-click="$ctrl.addBookmarkClick()"
            ui-sref="app.bookmarks.create">playlist_add</i>
     </div>
 </div>

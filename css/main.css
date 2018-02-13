@@ -152,6 +152,7 @@ textarea {
         filter: alpha(opacity=20);
         opacity: .5;
         padding: 2px 10px 0 0;
+        outline: none 0;
     }
 
     .addBookmarkIcon {
@@ -160,6 +161,7 @@ textarea {
         right: 5%;
         font-size: 60px;
         color: lightslategray;
+        outline: 0 none;
     }
     .addBookmarkIcon:hover {
         cursor: pointer;
@@ -244,6 +246,23 @@ textarea {
         text-transform: none;
     }
 
+    .action {
+        position: fixed;
+        right: 15%;
+        top: 4%;
+        max-width: 400px;
+        max-height: 63px;
+        z-index: 10001;
+        font-weight: bold;
+        color: #fff;
+        background: rgb(120,144,156);
+        align-items: center;
+        line-height: 28px;
+        height: 30px;
+        padding: 0 7px; 
+        overflow: hidden;
+    }
+
 /* =============================================================================== */
 
 .mainView {
@@ -255,7 +274,7 @@ textarea {
     color: grey;
 }
 
-#myInput {
+.myInput {
     background: url("../images/search-icon.png") no-repeat;
     width: 245px;
     background-position: 5px 8px;
@@ -286,6 +305,7 @@ button.list-group-item {
 .logo > h3 {
     cursor: pointer;
     color: cadetblue;
+    outline: 0 none;
 }
 
 .list-group-item.active, .list-group-item.active:focus,
@@ -306,6 +326,10 @@ button.list-group-item {
     .bookmarkList {
         margin-left: 30px;
     }
+
+    .action {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -317,6 +341,10 @@ button.list-group-item {
 
     .bookmarkList {
         margin-left: 30px;
+    }
+
+    .action {
+        display: none;
     }
 }
  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

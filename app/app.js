@@ -1,16 +1,13 @@
 (function (){
-    angular
-        .module('app', [
-            'ui.router',
-            'ngMaterial',
-            'ngDialog',
-            'ngAnimate',
-            'bookmark.states',
-            'category.states',
-            'theme'
-        ])
-        .config(configure)
 
+    var bigBrother = {
+        template: '<p>{{ $ctrl.message.key }}</p>',
+        controller: function(ActionService){
+            var self = this;
+            self.message = ActionService.message;
+        }
+    };
+        
     function configure($stateProvider, $urlRouterProvider){
         $stateProvider
             .state('app', {
@@ -36,5 +33,19 @@
             });
 
         $urlRouterProvider.otherwise('/');
-    };  
+    }
+
+    angular
+        .module('app', [
+            'ui.router',
+            'ngMaterial',
+            'ngDialog',
+            'ngAnimate',
+            'bookmark.states',
+            'category.states',
+            'theme',
+            'action.service'
+        ])
+        .component('bigBrother', bigBrother)
+        .config(configure)
 }());
