@@ -14,25 +14,25 @@
 
             vm.deleteBookmark = function(bookmark){
                 BookmarksService.deleteBookmark(bookmark);
-                ActionService.getMessage(`${bookmark.name} bookmark was deleted`);
+                ActionService.setMessage(`${bookmark.name} bookmark was deleted`);
             };
 
             vm.clearSearchField = function(){
-                ActionService.getMessage('Search field was cleared');
+                ActionService.setMessage('Search field was cleared');
                 vm.search.name = '';
             };
 
             // activity messages
             vm.addBookmarkClick = function () {
-                ActionService.getMessage('Creating a bookmark');
+                ActionService.setMessage('Creating a bookmark');
             };
 
             vm.editBookmarkClick = function(name) {
-                ActionService.getMessage(`${name} bookmark is editing`);
+                ActionService.setMessage(`${name} bookmark is editing`);
             };
 
             vm.searchFieldClick = function(name){
-                ActionService.getMessage('Looking for some bookmarks...');
+                ActionService.setMessage('Looking for some bookmarks...');
             }
         }
     };
@@ -50,13 +50,13 @@
                         self.createBookmark = function(){
                             self.newBookmark.category = $stateParams.category;
                             BookmarksService.createBookmark(self.newBookmark);
-                            ActionService.getMessage(`${self.newBookmark.name} bookmark was created!`)
+                            ActionService.setMessage(`${self.newBookmark.name} bookmark was created!`)
                             $state.go('app.bookmarks');
                             ngDialog.close();
                         };
             
                         self.cancelCreating = function(){
-                            ActionService.getMessage('Creating canceled');
+                            ActionService.setMessage('Creating canceled');
                             $state.go('app.bookmarks');
                             ngDialog.close();
                         };
@@ -79,13 +79,13 @@
                     self.isEditingBookmark = angular.copy(currentBookmark);
                     self.updateBookmark = function(bookmark){
                         BookmarksService.updateBookmark(bookmark);
-                        ActionService.getMessage(`${currentBookmark.name} is now ${bookmark.name} bookmark`)
+                        ActionService.setMessage(`${currentBookmark.name} is now ${bookmark.name} bookmark`)
                         $state.go('app.bookmarks');
                         ngDialog.close();
                     };
 
                     self.cancelEditing = function(){
-                        ActionService.getMessage('Editing cancelled');
+                        ActionService.setMessage('Editing cancelled');
                         $state.go('app.bookmarks');
                         ngDialog.close();
                     };

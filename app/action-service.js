@@ -3,22 +3,22 @@
 
     function ActionService(){
         var self = this;
-        self.message = {
+        var message = {
             key: 'You are at the main view'
         };
 
-        self.getMessage = function(data){
-            self.setMessage(data);
+        self.getMessage = function(){
+            return message;
         };
 
         self.setMessage = function(data){
             if (data !== null && data !== undefined){
-                self.message.key = data;
+                message.key = data;
             }
             else {
-                self.message.key = 'Something went wrong';
+                message.key = 'Something went wrong';
             }
-        }
+        };
     }
 
     angular

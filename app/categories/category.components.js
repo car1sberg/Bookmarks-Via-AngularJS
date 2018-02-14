@@ -18,14 +18,14 @@
                         var self = this;
 
                         // action message
-                        ActionService.getMessage(`You are deleting a ${category.name} category`);
+                        ActionService.setMessage(`You are deleting a ${category.name} category`);
 
                         self.closeDialog = function(){
                             ngDialog.close();
-                            ActionService.getMessage('Let it be alive')
+                            ActionService.setMessage('Let it be alive')
                         };
                         self.delete = function(){
-                            ActionService.getMessage(`${category.name} category was deleted!`);
+                            ActionService.setMessage(`${category.name} category was deleted!`);
                             ngDialog.close();
                             CategoriesService.deleteCategory(category);
                             $timeout(function(){
@@ -38,15 +38,15 @@
 
             // activity message
             vm.categoryCreateClick = function(){
-                ActionService.getMessage('You are creating a category');
+                ActionService.setMessage('You are creating a category');
             };
 
             vm.logoClick = function(){
-                ActionService.getMessage('You are at the main view');
+                ActionService.setMessage('You are at the main view');
             }
 
             vm.categoryClick = function(category){
-                ActionService.getMessage(`${category} category is chosen`)
+                ActionService.setMessage(`${category} category is chosen`)
             }
         }
     };
@@ -71,7 +71,7 @@
                 }
                 else {
                     CategoriesService.createCategory(category);
-                    ActionService.getMessage(`You\'ve just created a ${category} category`)
+                    ActionService.setMessage(`You\'ve just created a ${category} category`)
                     $state.go('app.categories'); 
                 }
             };
@@ -79,7 +79,7 @@
             vm.cancelCreating = function(){
                 $state.go('app.categories');
                 // activity message
-                ActionService.getMessage('Creation canceled');
+                ActionService.setMessage('Creation canceled');
             }
         }
     };

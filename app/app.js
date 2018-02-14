@@ -4,7 +4,7 @@
         template: '<p>{{ $ctrl.message.key }}</p>',
         controller: function(ActionService){
             var self = this;
-            self.message = ActionService.message;
+            self.message = ActionService.getMessage();
         }
     };
         
