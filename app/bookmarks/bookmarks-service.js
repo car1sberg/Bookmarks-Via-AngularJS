@@ -24,18 +24,7 @@
 		
 		// Getting BookmarkList
 		vm.getBookmarks = function() {
-			// return (bookmarks) ? $q.when(bookmarks) : $http.get(URLS.FETCH).then(cacheBookmarks);
-			var deferred = $q.defer();
-
-			if (bookmarks) {
-				deferred.resolve(bookmarks);
-			}
-			else {
-				$http.get(URLS.FETCH).then(function(bookmarks){
-					deferred.resolve(cacheBookmarks(bookmarks));
-				});
-			}
-			return deferred.promise;
+			return (bookmarks) ? $q.when(bookmarks) : $http.get(URLS.FETCH).then(cacheBookmarks);
 		};
 
 		vm.deleteBookmark = function(bookmark){
