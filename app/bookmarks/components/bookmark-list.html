@@ -19,7 +19,7 @@
 <!-- Bookmark list -->
 <div flex class="bookmarkLinksColor animated fadeIn">
     <md-list>
-        <md-list-item class="itemsFadeOut"
+        <md-list-item class="bookmarksLeaving"
                       ng-repeat="bookmark in $ctrl.bookmarks | filter: {category: $ctrl.currentCategoryName} | filter: $ctrl.search">
             <div flex="80">
                 <a href="{{bookmark.url}}">{{bookmark.name}}</a>
