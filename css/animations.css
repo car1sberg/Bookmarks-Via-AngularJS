@@ -31,3 +31,17 @@
 .bookmarksLeaving.ng-leave {
     animation: 0.8s linear bounceOutRight;
 }
+
+.bookmarksLeaving.ng-move,
+.bookmarksLeaving.ng-enter { 
+    -webkit-transition:all linear .7s;
+    transition:all linear .7s;
+} 
+.bookmarksLeaving.ng-move, 
+.bookmarksLeaving.ng-enter {  
+    opacity:0; 
+}  
+.bookmarksLeaving.ng-move.ng-move-active, 
+.bookmarksLeaving.ng-enter.ng-enter-active {   
+    opacity:1; 
+}
