@@ -8,8 +8,8 @@
             vm.currentCategoryName = $stateParams.category;
 
             BookmarksService.getBookmarks()
-                .then(function(result){
-                    vm.bookmarks = result;
+                .then(function(response){
+                    vm.bookmarks = response;
                 });
 
             vm.deleteBookmark = function(bookmark){

@@ -1,7 +1,7 @@
 (function (){
 
     var bigBrother = {
-        template: '<p>{{ $ctrl.message.key }}</p>',
+        template: '<p class="animated flash">{{ $ctrl.message.key }}</p>',
         controller: function(ActionService){
             var self = this;
             self.message = ActionService.getMessage();

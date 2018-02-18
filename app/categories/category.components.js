@@ -6,8 +6,8 @@
             var vm = this;
 
             CategoriesService.getCategories()
-                .then(function(result){
-                    vm.categories = result;
+                .then(function(resolve){
+                    vm.categories = resolve;
                 });
         
             vm.deleteCategory = function(category){
