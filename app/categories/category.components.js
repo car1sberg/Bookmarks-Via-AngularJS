@@ -56,6 +56,7 @@
         controller: function ($stateParams, $state, CategoriesService, ngDialog, $timeout, ActionService){
             var vm = this;
 
+
             vm.createCategory = function(category){
                 var categoryAlreadyExists = CategoriesService.categoryExists(category);
 
@@ -69,7 +70,8 @@
                         }
                     });
                 }
-                else {
+
+                if (typeof vm.categoryName !== 'undefined') {
                     CategoriesService.createCategory(category);
                     ActionService.setMessage(`You\'ve just created a ${category} category`)
                     $state.go('app.categories'); 

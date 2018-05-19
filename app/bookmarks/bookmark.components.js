@@ -48,11 +48,13 @@
                         var self = this;
 
                         self.createBookmark = function(){
-                            self.newBookmark.category = $stateParams.category;
-                            BookmarksService.createBookmark(self.newBookmark);
-                            ActionService.setMessage(`${self.newBookmark.name} bookmark was created!`)
-                            $state.go('app.bookmarks');
-                            ngDialog.close();
+                            if (self.newBookmark.name.length !== 0) {
+                                self.newBookmark.category = $stateParams.category;
+                                BookmarksService.createBookmark(self.newBookmark);
+                                ActionService.setMessage(`${self.newBookmark.name} bookmark was created!`)
+                                $state.go('app.bookmarks');
+                                ngDialog.close();
+                            }
                         };
             
                         self.cancelCreating = function(){
@@ -78,10 +80,12 @@
 
                     self.isEditingBookmark = angular.copy(currentBookmark);
                     self.updateBookmark = function(bookmark){
-                        BookmarksService.updateBookmark(bookmark);
-                        ActionService.setMessage(`${currentBookmark.name} is now ${bookmark.name} bookmark`)
-                        $state.go('app.bookmarks');
-                        ngDialog.close();
+                        if (self.isEditingBookmark.name.length !== 0){
+                            BookmarksService.updateBookmark(bookmark);
+                            ActionService.setMessage(`${currentBookmark.name} is now ${bookmark.name} bookmark`)
+                            $state.go('app.bookmarks');
+                            ngDialog.close();
+                        }
                     };
 
                     self.cancelEditing = function(){
